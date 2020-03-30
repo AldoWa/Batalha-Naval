@@ -25,11 +25,10 @@ int main()
                 std::cout << "Jogador 1 atacando Jogador 2" << std::endl;
                 int linha; 
                 int coluna;
-                
-                    std::cout << "Digite a linha: " << std::endl;
-                    std::cin >> linha;
-                    std::cout << "Digite a coluna: " << std::endl;
-                    std::cin >> coluna;
+                std::cout << "Digite a linha: " << std::endl;
+                std::cin >> linha;
+                std::cout << "Digite a coluna: " << std::endl;
+                std::cin >> coluna;
                 if (checarLimite(j2, linha, coluna) == true) {
                     j1->atacar(j2, linha, coluna);
                     while (true) {
