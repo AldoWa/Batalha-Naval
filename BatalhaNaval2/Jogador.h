@@ -14,12 +14,13 @@ public:
     void atacar(Jogador* jogador, int linha, int coluna);
 	ArrayList<ArrayList<Veiculo*>*>* tabuleiroJogador;
 	int getContador();
+	bool getAcertou();
 private:
 	int contador = 6;
 	void inserirVeiculos();
 	std::string nome;
 	ArrayList<ArrayList<Veiculo*>*>* criarTabuleiro();
-	
+	bool acertou;
 };
 
 

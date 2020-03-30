@@ -56,13 +56,14 @@ void Jogador::atacar(Jogador *jogador, int linha, int coluna)
 		Veiculo* veiculo = jogador->tabuleiroJogador->get(linha)->get(coluna);
 		if (veiculo == nullptr) {
 			std::cout << "Errou atingiu agua" << std::endl;
+			this->acertou = false;
 		}
 		else {
 			jogador->tabuleiroJogador->get(linha)->remove(coluna);
 			std::cout << "Acertou" << std::endl;
 			int novoTamanho = (veiculo->getCelula() - 1);
 			veiculo->setCelula(novoTamanho);
-			
+			this->acertou = true;
 			if (veiculo->getCelula() == 0) {
 				std::cout << "Barco Destruido , nome = " << veiculo->getNome() << "/ Tamanho = " << veiculo->getCelulaAntesFim()<< std::endl;
 				this->contador = this->contador - 1;
@@ -76,6 +77,11 @@ void Jogador::atacar(Jogador *jogador, int linha, int coluna)
 int Jogador::getContador()
 {
 	return this->contador;
+}
+
+bool Jogador::getAcertou()
+{
+	return this->acertou;
 }
 
 
